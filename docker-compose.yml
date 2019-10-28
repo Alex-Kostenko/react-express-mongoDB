@@ -13,6 +13,7 @@ services:
             - api
         networks:
             - webappnetwork
+        build: ./client
     api:
         image: webapp-api
         restart: always
@@ -25,16 +26,32 @@ services:
             - mongodb
         networks:
             - webappnetwork
+        build: ./api
+    # mongodb:
+    #     image: mongo
+    #     restart: always
+    #     container_name: mongodb
+    #     volumes:
+    #         - ./data-node:/data/db
+    #     ports:
+    #         - 27017:27017
+    #     command: mongod --noauth --smallfiles
+    #     networks:
+    #         - webappnetwork
+
     mongodb:
         image: mongo
         restart: always
+
         container_name: mongodb
+
         volumes:
-            - ./data-node:/data/db
+            - ./dbdata:/data/db
         ports:
             - 27017:27017
-        command: mongod --noauth --smallfiles
+        command: mongod --noauth
         networks:
+            # - datelovestorynetwork
             - webappnetwork
 networks:
     webappnetwork:
