@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
-import "./App.css";
+import { Button, Radio, Icon } from 'antd';
 
 const App = () => {
 
@@ -23,6 +22,10 @@ const App = () => {
     <div className="App">
       <div>{apiResponse}</div>
       <div>{dbResponse}</div> 
+      <Button type="primary">Button</Button>
+      <Radio type="primary" checked={true}/>
+      <Icon type="step-backward" theme="filled" />
+      <Icon type="down-square" theme="filled" />
     </div>
   );
 };
