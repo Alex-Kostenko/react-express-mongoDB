@@ -4,6 +4,8 @@ FROM mhart/alpine-node:8.11.4
 # Set the working directory to /api
 WORKDIR /api
 
+RUN npm install -g nodemon
+
 # copy package.json into the container at /api
 COPY package*.json /api/
 
@@ -17,4 +19,4 @@ COPY . /api/
 EXPOSE 80
 
 # Run the app when the container launches
-CMD ["npm", "start"]
+CMD ["npm", "run", "start.dev"]
