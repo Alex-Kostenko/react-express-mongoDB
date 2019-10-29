@@ -1,5 +1,3 @@
-# Date Love Story
-
 ## About the app
 Actually, there are two separated apps. The Client which serves the FrontEnd (using React), and the API (in Node/Express).
 
