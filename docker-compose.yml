@@ -1,5 +1,19 @@
 version: "2"
 services:
+    mongodb:
+        image: mongo
+        restart: always
+
+        container_name: mongodb
+
+        volumes:
+            - ./dbdata:/data/db
+        ports:
+            - 27017:27017
+        command: mongod --noauth
+        networks:
+            - webappnetwork
+
     client:
         image: mhart/alpine-node:6.8.0
         restart: always
@@ -14,6 +28,7 @@ services:
         networks:
             - webappnetwork
         build: ./client
+
     api:
         image: webapp-api
         restart: always
@@ -28,19 +43,6 @@ services:
             - webappnetwork
         build: ./api
 
-    mongodb:
-        image: mongo
-        restart: always
-
-        container_name: mongodb
-
-        volumes:
-            - ./dbdata:/data/db
-        ports:
-            - 27017:27017
-        command: mongod --noauth
-        networks:
-            - webappnetwork
 networks:
     webappnetwork:
         driver: bridge

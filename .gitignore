@@ -6,6 +6,11 @@ node_modules/*
 # DB nodes
 data-node/*
 
+# DB nodes
+dbdata/*
+# DB nodes
+/dbdata/*
+
 # testing
 /coverage
 
@@ -18,6 +23,8 @@ data-node/*
 .env.development.local
 .env.test.local
 .env.production.local
+*.wt
+metrics.*
 
 npm-debug.log*
 yarn-debug.log*

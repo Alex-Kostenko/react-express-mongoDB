@@ -29,14 +29,15 @@ class App extends Component {
 
     // Execute the calls when componnent mounts
     componentDidMount() {
-        this.callAPI();
-        this.callDB();
+        const API = this.callAPI();
+        const DB = this.callDB();
     }
 
     render() {
         return (
             <div className="App">
                 asd
+                {console.log(this.API, this.DB )}
             </div>
         );
     }
