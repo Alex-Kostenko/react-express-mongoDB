@@ -52,7 +52,9 @@ http.createServer(function (request, response) {
     response.end(message);
 
 }).listen(3000, "127.0.0.1", () => {
-    console.log("Сервер начал прослушивание запросов");
+    console.log("----------------------------------------------------------------".toLocaleUpperCase());
+    console.log("---------------Сервер начал прослушивание запросов--------------".toLocaleUpperCase());
+    console.log("----------------------------------------------------------------".toLocaleUpperCase());
 });
 
 module.exports = app;

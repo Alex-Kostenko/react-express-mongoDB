@@ -9,6 +9,8 @@ data-node/*
 # DB nodes
 dbdata/*
 # DB nodes
+/dbdata
+
 /dbdata/*
 
 # testing

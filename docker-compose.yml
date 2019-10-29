@@ -15,7 +15,7 @@ services:
             - webappnetwork
 
     client:
-        image: mhart/alpine-node:6.8.0
+        image: node:12.13.0-alpine
         restart: always
         ports:
             - "3000:3000"
